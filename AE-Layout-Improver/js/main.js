@@ -1,19 +1,19 @@
 function myFunction() {
-    //------------------------------------------------------------------------------------------------create your own AE SMartname like this:  SMARTNAME XPath Query => //Result =  <<Result/>>
-    var dato = `<<Result/>>`  //----------------------------------------------------------------------copy-paste here example.txt for testing, lately you must set here your smartname[Result]
+    //create your own AE SMartname like this:  SMARTNAME XPath Query => //Result =  <<Result/>>
+    var dato = `<<Result/>>`  //copy-paste here example.txt for testing, lately you must set here your smartname[Result]
     dato = dato.replaceAll("&lt;", "<")
     dato = dato.replaceAll("&gt;", ">")
     //console.log(dato)
-    //------------------------------------------------------------------------------------------------split for every possible result
+    //split for every possible result
     var results = dato.split("</Result>")
     //console.log(results)
-    //------------------------------------------------------------------------------------------------pop out empty line, (usually last result line is empty)
+    //pop out empty line, (usually last result line is empty)
     if (results[results.length - 1].length < 10)
         results.pop();
     //console.log(results)
-    //-----------------------------------------------------------------------------------------------create array of object with all the MFG created by AE
+    //create array of object with all the MFG created by AE
     var designs = [];
-    //-----------------------------------------------------------------------------------------------push the array and create a dictionary with all the tecnincal information un the xml report
+    //push the array and create a dictionary with all the tecnincal information un the xml report
     for (var i = 0; i < results.length; i++) {
         designs.push({
             'DesignName': results[i].match(new RegExp('<DesignName>([^<]+)'))[1],
