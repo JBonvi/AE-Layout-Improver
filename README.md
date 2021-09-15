@@ -13,4 +13,7 @@ Despite this AE Layout isn't very adaptable to an industry that don't use pre-cu
 
 I created these script to solve this problems
 
+In the picture below you can see (partial) example of the flow where i apllied AE-Layout-Improver and other small script
+
 ![alt text](AE-Layout-Improver/flux_example-01.png "AE flow example")
+
